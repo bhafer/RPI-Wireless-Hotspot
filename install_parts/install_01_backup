@@ -1,0 +1,22 @@
+#!/bin/bash
+# Raspberry Pi Wireless Hotspot Installation Script
+
+echo "Backing up existing config files"
+
+readonly CONFIG_FILES=(/etc/udhcpd.conf
+	/etc/default/udhcpd
+	/etc/network/interfaces
+	/etc/hostapd/hostapd.conf
+	/etc/default/hostapd
+	/etc/sysctl.conf
+	/etc/iptables.ipv4.nat)
+
+for c in ${CONFIG_FILES[*]};
+do
+	if [ -f ${c} ]
+	then
+		cp -i ${c} ${c}.old
+	fi
+done
+
+echo "Config Files backed up"
