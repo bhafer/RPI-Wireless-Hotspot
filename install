@@ -166,6 +166,12 @@ else
 	cp ./config-files/iptables.ipv4.nat /etc
 fi
 
+# FIX FOR: Failed to start hostapd.service: Unit hostapd.service is masked.
+# FROM: https://www.raspberrypi.org/forums/viewtopic.php?t=235598
+systemctl unmask hostapd
+systemctl enable hostapd
+systemctl start hostapd
+
 touch /var/lib/misc/udhcpd.leases
 
 echo "Initialising access point"
