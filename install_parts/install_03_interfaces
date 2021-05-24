@@ -1,0 +1,11 @@
+#!/bin/bash
+# Raspberry Pi Wireless Hotspot Installation Script
+
+if [ -n "${_ROUTER}" ]; then
+	echo "${_ROUTER}"
+	sed -e "s/ROUTER/${_ROUTER}/g" ./config-files/interfaces-template > /etc/network/interfaces
+else
+	echo "no ROUTER"
+	cp ./config-files/interfaces /etc/network
+fi
+
