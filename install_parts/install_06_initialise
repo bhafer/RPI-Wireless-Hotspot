@@ -11,14 +11,5 @@ echo "Initialising DHCP server"
 service udhcpd start
 update-rc.d udhcpd enable
 
-
-echo "================================================================"
-echo "=================== Configuration complete! ===================="
-echo "================================================================"
-
-echo "+++++++++++++++++  REBOOTING in 10 SECONDS  ++++++++++++++++++++"
-echo "++++++++++++++++++++++ CTL-C to cancel ++++++++++++++++++++++++"
-
-
 echo "=================== Configuration complete! ===================="
 echo "Perform ''reboot''"
