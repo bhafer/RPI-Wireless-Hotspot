@@ -1,0 +1,24 @@
+#!/bin/bash
+# Raspberry Pi Wireless Hotspot Installation Script
+
+touch /var/lib/misc/udhcpd.leases
+
+echo "Initialising access point"
+service hostapd start
+update-rc.d hostapd enable
+
+echo "Initialising DHCP server"
+service udhcpd start
+update-rc.d udhcpd enable
+
+
+echo "================================================================"
+echo "=================== Configuration complete! ===================="
+echo "================================================================"
+
+echo "+++++++++++++++++  REBOOTING in 10 SECONDS  ++++++++++++++++++++"
+echo "++++++++++++++++++++++ CTL-C to cancel ++++++++++++++++++++++++"
+
+
+echo "=================== Configuration complete! ===================="
+echo "Perform ''reboot''"
