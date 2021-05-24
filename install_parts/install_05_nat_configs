@@ -1,0 +1,8 @@
+#!/bin/bash
+# Raspberry Pi Wireless Hotspot Installation Script
+
+echo "Configuring NAT"
+cp ./config-files/sysctl.conf /etc
+
+echo "Configuring iptables"
+cp ./config-files/iptables.ipv4.nat /etc
