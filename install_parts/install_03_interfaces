@@ -8,4 +8,3 @@ else
 	echo "no ROUTER"
 	cp ./config-files/interfaces /etc/network
 fi
-
